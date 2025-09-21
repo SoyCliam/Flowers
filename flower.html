@@ -404,29 +404,29 @@
       </div> -->
     </div>
     <!-- Este es el reproductor de audio -->
-<audio id="miAudio" src="https://archive.org/download/flormusica/flormusica.mp3"></audio>
+    <audio id="miAudio" src="https://archive.org/download/flormusica/flormusica.mp3"></audio>
 
-<script>
-  // Obtener el elemento de audio
-  let miAudio = document.getElementById('miAudio');
-  
-  // Configurar para que se reproduzca en bucle (si lo deseas)
-  miAudio.loop = true;
-  
-  // Intentar reproducirlo automáticamente (puede fallar)
-  let promesa = miAudio.play();
-  
-  // Si falla por la política de autoplay...
-  if (promesa !== undefined) {
-    promesa.catch(error => {
-      // ¡Falló! Entonces esperamos a que el usuario haga clic en la página.
-      document.body.addEventListener('click', function() {
-        // Ahora sí, con el clic del usuario, lo reproducimos.
-        miAudio.play();
-      });
-    });
-  }
-</script>
+    <script>
+      // Obtener el elemento de audio
+      let miAudio = document.getElementById('miAudio');
+      
+      // Configurar para que se reproduzca en bucle (si lo deseas)
+      miAudio.loop = true;
+      
+      // Intentar reproducirlo automáticamente (puede fallar)
+      let promesa = miAudio.play();
+      
+      // Si falla por la política de autoplay...
+      if (promesa !== undefined) {
+        promesa.catch(error => {
+          // ¡Falló! Entonces esperamos a que el usuario haga clic en la página.
+          document.body.addEventListener('click', function() {
+            // Ahora sí, con el clic del usuario, lo reproducimos.
+            miAudio.play();
+          });
+        });
+      }
+    </script>
     <script src="anim.js"></script>
     <script src="main.js"></script>
   </body>
